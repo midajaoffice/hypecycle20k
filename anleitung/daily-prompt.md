@@ -4,7 +4,7 @@ Copy-paste in **neuen** Project-Chat:
 
 ```text
 Folge operator-protocol.md Phase 1–5 (intern).
-Portfolio-Lebenszyklus beachten (Watchlist 5–8, max. 4 Positionen, Verwerfen, Verkauf, Auffüllen).
+Lies den Abschnitt „Portfolio-Lebenszyklus“ in operator-protocol.md (Status, max. 4 Positionen, 20 % Cash, Verwerfen → rejected-ideas, Verkauf/V1, Auffüllen, Ausführung im Log).
 Lies zuerst OPERATOR_VIEW in portfolio-state.md.
 Zahlen NUR aus portfolio-state, nicht aus Memory.
 

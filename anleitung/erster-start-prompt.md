@@ -6,6 +6,7 @@ Project-Dateien aktuell? Dann senden:
 
 ```text
 Folge operator-protocol.md Phase 1–5 (intern).
+Lies den Abschnitt „Portfolio-Lebenszyklus“ in operator-protocol.md (Grenzen, Verwerfen, späterer Verkauf — Erstlauf nutzt v. a. Kauf-Pfad + Watchlist).
 Lies OPERATOR_VIEW in portfolio-state.md, dann operator-core.md.
 
 KONTEXT (Fakten):

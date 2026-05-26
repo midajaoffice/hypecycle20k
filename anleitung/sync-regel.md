@@ -1,4 +1,8 @@
-# Sync-Regel — Google ↔ ChatGPT
+# Sync-Regel — Dateien ↔ ChatGPT Project
+
+**Wahrheit:** Git-Repo (`täglich/`, `ideen/`). ChatGPT Project = Arbeitskopie — nach dem Chat lokale Dateien + Project-Dateien anpassen.
+
+**Lebenszyklus:** Bei Kauf/Verkauf/Verwerfen immer [`../chatgpt/operator-protocol.md`](../chatgpt/operator-protocol.md) Abschnitt **Portfolio-Lebenszyklus** beachten (`Ausführung:`, `# REJECTED_IDEA`).
 
 ## Einmal ins Project
 
@@ -25,7 +29,7 @@
 
 ## Nicht ins Project
 
-`anleitung/`, `archiv/`, `decision-log.md` (Vollarchiv nur Google)
+`anleitung/`, `archiv/`, `decision-log.md` (Vollarchiv — nur lokal/Git, nicht ins Project)
 
 ## Chats & Memory
 

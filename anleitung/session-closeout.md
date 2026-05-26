@@ -6,9 +6,9 @@
 
 ## Vor dem Chat
 
-- [ ] [`../täglich/portfolio-state.md`](../täglich/portfolio-state.md) — `OPERATOR_VIEW` + Cash ok?
+- [ ] [`../täglich/portfolio-state.md`](../täglich/portfolio-state.md) — `OPERATOR_VIEW` + Cash ok? (Lebenszyklus: max. 4 Pos., 20 % Cash-Reserve)
 - [ ] Neuer Chat → Project **HypeCycle**
-- [ ] Project-Dateien aktuell (sonst aus Google ersetzen)
+- [ ] Project-Dateien aktuell (sonst aus Repo kopieren / Project ersetzen)
 
 **Prompt:** [`daily-prompt.md`](daily-prompt.md)
 
