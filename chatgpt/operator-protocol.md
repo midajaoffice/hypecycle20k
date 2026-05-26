@@ -71,6 +71,90 @@ Defaults: FEE_ORDER = 1 €, SLIPPAGE_PCT = 0,25 %
 
 ---
 
+## Portfolio-Lebenszyklus (Pflicht bei Status-Änderungen)
+
+> **Watchlist** = Radar (Beobachten/Kaufen prüfen) **plus** dokumentierte **Positionen** (Status `Position`).  
+> **§4** = einzige Positions-Wahrheit für Bestand. Mission Control führt Trades aus; Operator dokumentiert.
+
+### Status-Modell
+
+| Status | Bedeutung |
+|---|---|
+| **Beobachten** | auf Radar, kein Kauf-Call |
+| **Kaufen prüfen** | Trade-Gate bestanden, max. 2× pro Lauf (K1/K2) |
+| **Verkauf prüfen** | Exit/These/Gewinn — max. 1× pro Lauf (V1) |
+| **Daten prüfen** | NV / Gate fail / DQ schwach |
+| **Position** | in §4 eingetragen, weiter in Watchlist + §5 |
+| **Verworfen** | aus aktiver Watchlist → [`../ideen/rejected-ideas.md`](../ideen/rejected-ideas.md) |
+
+### Portfolio-Grenzen (500 € Modell)
+
+| Regel | Wert |
+|---|---|
+| Max. **gleichzeitige** Positionen (§4) | **4** |
+| Max. **neue** „Kaufen prüfen“ pro Lauf | **2** (K1/K2) |
+| Min. **Cash-Reserve** | **20 %** des PV (Ausnahme nur mit Begründung im Log) |
+| Aktive Watchlist (ohne Position-Zeilen) | **5–8** Namen mit Status Beobachten / Kaufen prüfen / Daten prüfen |
+
+### A) Kauf (Einstieg)
+
+1. Kandidat: höchster Score unter **Beobachten** / **Kaufen prüfen**, der Trade-Gate + Cash + Positionslimit passiert.
+2. **Kein K1/K2**, wenn bereits **4** Positionen offen — außer am selben Tag wurde eine Position verkauft (Cash frei).
+3. Nach **bestätigtem Kauf** (Mission Control): Zeile in **§4**, Status in Watchlist + §5 → **Position**, `OPERATOR_VIEW.positionen` + Cash aktualisieren, Log **Ausführung: Kauf bestätigt**.
+
+### B) Verkauf & Gewinnrealisierung
+
+**Operator empfiehlt nur „Verkauf prüfen“ (V1)** — verkauft nie selbst.
+
+| Auslöser | Aktion Operator | Nach bestätigtem Verkauf (Mission Control) |
+|---|---|---|
+| **Stop/Exit** in §4 (z. B. −15 %, These bricht) | V1 mit `grund=stop` / `these_bruch` | §4-Zeile **entfernen**, Cash erhöhen, Watchlist: Ticker → **Verworfen** oder Zeile löschen + `rejected-ideas` |
+| **Gewinnmitnahme** (optional prüfen) | V1 wenn **pnl ≥ +30 %** *oder* Position > **30 %** PV durch Kursanstieg *oder* North-Star erfordert Umschichtung | wie Verkauf; Log `grund=gewinnmitnahme` |
+| **DQ D/E** | kein V1, nur `daten_pruefen` | — |
+
+**Gewinnmitnahme ist keine Pflicht** — nur prüfen und im Log begründen. Kein automatischer Verkauf durch den Operator.
+
+### C) Watchlist — wann raus?
+
+Ticker **aus der aktiven Watchlist** (nicht aus §4, solange Position offen):
+
+| Grund | Aktion |
+|---|---|
+| Status → **Verworfen** (These tot, durch besseren Kandidaten ersetzt, Nutzer-Entscheid) | Eintrag in `rejected-ideas.md` + Zeile aus `watchlist.md` / §5 **entfernen** (Position-Zeilen bleiben bis Verkauf) |
+| Score **&lt; 5,5** und **2 Läufe** ohne Verbesserung | Status **Verworfen** vorschlagen (NEXT-Zeile) |
+| Watchlist **&gt; 8** Beobachten-Kandidaten | schwächsten Score **Verworfen** oder archivieren |
+| **14 Tage** ohne relevanten Katalysator/Update | in NEXT: „Reaktivieren oder Verwerfen“ |
+
+**Positionen (Status Position):** bleiben in Watchlist + §5 **bis Verkauf** — nicht löschen, nur §4 + Cash pflegen.
+
+### D) Watchlist — Slot auffüllen
+
+Nach **Verkauf**, **Verwerfen** oder wenn **&lt; 5** Beobachten-Kandidaten:
+
+1. **Cash prüfen:** Reserve ≥ 20 %? Sonst kein K1 (ACT = `halten` / `kein_neukauf`).
+2. **Plätze prüfen:** Positionen &lt; 4?
+3. **Priorität:** höchster Score unter **Beobachten** mit Trade-Gate → **Kaufen prüfen** (max. 2 pro Lauf).
+4. Wenn keine Kandidaten: **RESEARCH** 1 neues Thema (Space/Defense/KI/Gaming/Uran), Score, in Watchlist aufnehmen (weiter 5–8 gesamt).
+5. Briefing **RAD** = nur aktive Radar-Ticker (max. 6), nicht verworfene.
+
+### E) Sync-Pflicht bei Lebenszyklus-Ereignis
+
+| Ereignis | Blöcke |
+|---|---|
+| Kauf / Verkauf / Cash-Änderung | `# UPDATED_PORTFOLIO_STATE` + `# NEW_LOG_ENTRY` |
+| Watchlist-Status / §5 geändert | `# UPDATED_WATCHLIST` |
+| Verworfen | zusätzlich Zeile in `rejected-ideas` (Mission Control pflegt Datei; Operator liefert Markdown-Snippet im Log oder separaten Block `# REJECTED_IDEA` nur bei Verwerfen) |
+
+### F) NEW_LOG_ENTRY — Zusatzfeld
+
+```markdown
+**Ausführung:** keine | Kauf bestätigt | Verkauf bestätigt
+```
+
+Immer setzen: **keine** = nur Research; **Kauf/Verkauf bestätigt** = Mission Control hat ausgeführt (nicht der Operator).
+
+---
+
 ## Phase 5 — EMIT
 
 ### A) Briefing (Teil 1 der Antwort)
@@ -115,8 +199,9 @@ Defaults: FEE_ORDER = 1 €, SLIPPAGE_PCT = 0,25 %
 | Reihenfolge | Block | Inhalt |
 |---:|---|---|
 | 1 | `# UPDATED_PORTFOLIO_STATE` | **Vollständige** Datei; OPERATOR_VIEW = Briefing-Zahlen |
-| 2 | `# UPDATED_WATCHLIST` | bei Watchlist-/Status-Änderung |
-| 3 | `# NEW_LOG_ENTRY` | max. 15 Zeilen |
+| 2 | `# UPDATED_WATCHLIST` | bei Watchlist-/Status-/Verwerfen-Änderung |
+| 3 | `# NEW_LOG_ENTRY` | max. 15 Zeilen, inkl. **Ausführung:** |
+| 4 | `# REJECTED_IDEA` | nur bei Verwerfen (eine Tabellenzeile für `rejected-ideas.md`) |
 
 **Zwischen Blöcken:** kein Kommentar, keine Wiederholung des Briefings.
 
@@ -126,11 +211,22 @@ Defaults: FEE_ORDER = 1 €, SLIPPAGE_PCT = 0,25 %
 ## YYYY-MM-DD
 **North Star:** 500→5000|Ist …|Fortschritt …%|Lücke … EUR
 **DQ:** … | **Fazit:** … | **Kaufen prüfen:** … | **Verkauf prüfen:** …
+**Ausführung:** keine | Kauf bestätigt | Verkauf bestätigt
 **Änderungen:** … | **Watchlist:** …
 **Gebühren/Steuer:** … | **Risiko:** … | **Nächster Schritt:** …
 **Lernnotiz:** …
 ```
 
-### D) Optional
+### D) `# REJECTED_IDEA` (nur bei Verwerfen)
+
+Eine Markdown-Zeile für [`../ideen/rejected-ideas.md`](../ideen/rejected-ideas.md):
+
+```markdown
+# REJECTED_IDEA
+
+| 2026-05-28 | Corsair Gaming | CRSR | Score 2 Läufe <5.5; Konsum schwach | — | verworfen |
+```
+
+### E) Optional
 
 `# OPERATOR_SNAPSHOT` — HCSP-lite, nicht für Google ([`hcsp-lite.md`](hcsp-lite.md))

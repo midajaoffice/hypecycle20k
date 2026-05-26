@@ -25,7 +25,8 @@
 |---|---|
 | `UPDATED_PORTFOLIO_STATE` | `portfolio-state.md` (ganze Datei) |
 | `NEW_LOG_ENTRY` | `decision-log.md` + `decision-log-recent.md` |
-| `UPDATED_WATCHLIST` | `watchlist.md` (nur bei Bedarf) |
+| `UPDATED_WATCHLIST` | `watchlist.md` (Status / Kauf / Verkauf / Verwerfen) |
+| `REJECTED_IDEA` | `ideen/rejected-ideas.md` (nur bei Verwerfen) |
 
 ### ChatGPT Project ersetzen
 

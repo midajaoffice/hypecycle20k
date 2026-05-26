@@ -419,8 +419,19 @@ function logField(fields, key) {
   return f ? f.val : "";
 }
 
-/** Heuristik aus Fazit / Änderungen — klarere Lesbarkeit ob gehandelt wurde. */
+/** Ausführung-Feld oder Heuristik aus Fazit / Änderungen. */
 function classifyTradingAction(fields) {
+  const ausf = logField(fields, "Ausführung").toLowerCase();
+  if (/verkauf\s*bestätigt|verkauft\s*bestätigt/.test(ausf)) {
+    return { label: "Verkauft", sub: "Ausführung: Verkauf bestätigt", cls: "log-action--sell" };
+  }
+  if (/kauf\s*bestätigt|gekauft\s*bestätigt/.test(ausf)) {
+    return { label: "Gekauft", sub: "Ausführung: Kauf bestätigt", cls: "log-action--buy" };
+  }
+  if (ausf === "keine" || ausf.includes("keine ausführung")) {
+    return { label: "Kein Kauf", sub: "Ausführung: keine", cls: "log-action--none" };
+  }
+
   const fazit = logField(fields, "Fazit").toLowerCase();
   const änderungen = logField(fields, "Änderungen").toLowerCase();
   const blob = `${fazit} ${änderungen}`;
@@ -468,7 +479,12 @@ function renderLog(entries) {
             <span class="log-action-sub">${act.sub}</span>
           </div>
         </div>
-        ${e.fields.map((f) => `<div class="log-line"><strong>${f.key}:</strong> ${f.val}</div>`).join("")}
+        ${e.fields
+          .map((f) => {
+            const hi = f.key === "Ausführung" ? " log-line--ausfuehrung" : "";
+            return `<div class="log-line${hi}"><strong>${f.key}:</strong> ${f.val}</div>`;
+          })
+          .join("")}
       </article>
     `;
     })

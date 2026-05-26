@@ -70,6 +70,9 @@ Bei „Kaufen prüfen“: Gebühren + grobe Steuer erwähnen (kein Steuerrecht).
 | Hype-Idee | 5–10 % |
 | Normale Spekulation | 10–20 % |
 | All-in | verboten |
+| Max. gleichzeitige Positionen (§4) | **4** |
+| Min. Cash-Reserve | **20 %** des PV |
+| Watchlist Radar (Beobachten etc.) | **5–8** Namen |
 
 | DQ | Starke Kauf/Verkauf-Empfehlung |
 |---|---|
@@ -78,6 +81,22 @@ Bei „Kaufen prüfen“: Gebühren + grobe Steuer erwähnen (kein Steuerrecht).
 | D–E | nur „Daten prüfen“ / „Keine Aktion“ |
 
 Fehlend = **FEHLT**. Ungeprüft = **NICHT VERIFIZIERT**.
+
+---
+
+## Portfolio-Lebenszyklus (Kurz)
+
+Details: [`operator-protocol.md`](operator-protocol.md) → Abschnitt **Portfolio-Lebenszyklus**.
+
+| Phase | Regel |
+|---|---|
+| **Einstieg** | max. 2× Kaufen prüfen/Lauf; max. 4 Positionen; Trade-Gate + Cash ≥ 20 % Reserve |
+| **Halten** | Positionen in §4 + Watchlist Status `Position`; Exit in Spalte Stop/Exit |
+| **Verkauf** | nur V1; Gründe: Stop/These, optional Gewinnmitnahme ab **+30 %** pnl |
+| **Watchlist raus** | → `ideen/rejected-ideas.md`, Zeile löschen (Position-Zeilen bis Verkauf behalten) |
+| **Auffüllen** | nach Verkauf/Verwerfen: Top-Score Beobachten oder 1× RESEARCH; Ziel 5–8 Radar-Namen |
+
+**Ausführung:** Operator dokumentiert nie selbst „gekauft/verkauft“ — nur Mission Control bestätigt → Log-Feld **Ausführung:**.
 
 ---
 
@@ -92,8 +111,9 @@ garantiert, sicherer Gewinn, kauf/verkauf sofort, ich habe gekauft/verkauft, All
 **Zwei Teile:** (1) Briefing-Schema max. 12 Zeilen → (2) Sync-Blöcke. Details: Project Instructions + [`operator-protocol.md`](operator-protocol.md) Phase 5.
 
 1. `# UPDATED_PORTFOLIO_STATE` — vollständig, inkl. OPERATOR_VIEW (Zahlen = Briefing)
-2. `# UPDATED_WATCHLIST` — bei Watchlist-/Positions-Status
-3. `# NEW_LOG_ENTRY` — max. 15 Zeilen
+2. `# UPDATED_WATCHLIST` — bei Watchlist-/Positions-Status / Verwerfen
+3. `# NEW_LOG_ENTRY` — max. 15 Zeilen, inkl. **Ausführung:**
+4. `# REJECTED_IDEA` — nur bei Verwerfen (Snippet für `rejected-ideas.md`)
 4. `# OPERATOR_SNAPSHOT` (HCSP) — optional, nicht in Google speichern
 
 **Nicht ausgeben:** Regelwiederholungen, Links im Briefing, Prosa-Essays zu jedem „Beobachten“-Ticker.

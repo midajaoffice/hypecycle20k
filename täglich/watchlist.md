@@ -2,6 +2,17 @@
 
 Ideen und Kandidaten zur Beobachtung. **Keine** Kaufempfehlung.
 
+## Regeln (Radar + Positionen)
+
+| Regel | Wert |
+|---|---|
+| Radar (Beobachten / Kaufen prüfen / Daten prüfen) | **5–8** Ticker |
+| Offene Positionen | max. **4** (Wahrheit in `portfolio-state.md` §4) |
+| Status **Position** | bleibt hier + §5, bis **Verkauf** bestätigt |
+| Status **Verworfen** | Zeile **entfernen** → Eintrag in [`../ideen/rejected-ideas.md`](../ideen/rejected-ideas.md) |
+| Auffüllen | nach Verkauf/Verwerfen: höchster Score unter Beobachten oder 1× neues RESEARCH-Thema |
+| Operator-Pipeline | [`../chatgpt/operator-protocol.md`](../chatgpt/operator-protocol.md) → Portfolio-Lebenszyklus |
+
 ## Aktive Watchlist
 
 | Asset | Ticker | Markt | Thema | Fakt / Annahme / Spekulation | Katalysator | Warum interessant? | Hauptrisiko | Score | Status | Nächster Prüfpunkt | DQ |

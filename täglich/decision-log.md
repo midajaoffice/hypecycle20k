@@ -18,6 +18,7 @@ Nach jedem Briefing `# NEW_LOG_ENTRY` einfügen in:
 
 **North Star:** Starsumme FEHLT → Ziel 10× FEHLT | Ist FEHLT | Fortschritt FEHLT% | Lücke FEHLT EUR
 **DQ:** E | **Fazit:** Keine Aktion | **Kaufen prüfen:** — | **Verkauf prüfen:** —
+**Ausführung:** keine
 **Änderungen an portfolio-state:** keine | **Watchlist:** keine
 **Gebühren/Steuer heute:** — | **Risiko:** Datenlücken | **Nächster Schritt:** Starsumme eintragen
 **Lernnotiz:** Eine Zeile.
@@ -38,6 +39,7 @@ Nach jedem Briefing `# NEW_LOG_ENTRY` einfügen in:
 
 **North Star:** 500→5000 EUR | Ist 498 EUR | Fortschritt 10,0 % | Lücke 4.502 EUR
 **DQ:** B | **Fazit:** Erstkauf RKLB + UEC | **Kaufen prüfen:** — | **Verkauf prüfen:** —
+**Ausführung:** Kauf bestätigt
 **Änderungen:** RKLB 125 EUR, UEC 100 EUR; Cash 273 EUR; 2× Gebühr 1 EUR | **Watchlist:** RKLB/UEC → Position
 **Gebühren/Steuer:** 2 EUR Orders; PV 498 nach Gebühren | **Risiko:** 45 % investiert, 55 % Cash
 **Nächster Schritt:** Broker-Fills in §4; Kurse aktualisieren; ASTS/RCAT beobachten
@@ -49,6 +51,7 @@ Nach jedem Briefing `# NEW_LOG_ENTRY` einfügen in:
 
 **North Star:** 500→5000 EUR | Ist 500 EUR | Fortschritt 10,0 % | Lücke 4.500 EUR
 **DQ:** C | **Fazit:** Watchlist erstellt, keine Ausführung | **Kaufen prüfen:** RKLB 125 €, UEC 100 € | **Verkauf prüfen:** —
+**Ausführung:** keine
 **Änderungen:** OPERATOR_VIEW watchlist_top=RKLB,UEC; Positionen weiter keine | **Watchlist:** 8 Kandidaten
 **Gebühren/Steuer:** RKLB RT 2,63 €/BE 2,10 %; UEC RT 2,50 €/BE 2,50 %; DE-Modell 26,375 % über 1.000 € Freistellung
 **Risiko:** 10×-Ziel extrem ambitioniert; DQ C wegen Broker/Fractionals/FX offen

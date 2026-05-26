@@ -582,6 +582,16 @@ tr:last-child td {
   font-weight: 500;
 }
 
+.log-line--ausfuehrung {
+  color: var(--text);
+  font-weight: 500;
+  margin: 0.35rem 0 0.5rem;
+  padding: 0.35rem 0.5rem;
+  background: var(--surface2);
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+}
+
 .footer {
   margin-top: 2rem;
   padding-top: 1rem;

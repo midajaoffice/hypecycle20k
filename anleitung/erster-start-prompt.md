@@ -18,12 +18,14 @@ KONTEXT (Fakten):
 
 AUFGABE — Erster Zyklus:
 VALIDATE → RESEARCH (Watchlist 5–8) → SCORE (max. 2× Kaufen prüfen + Trade-Gate) → EMIT
+Portfolio-Lebenszyklus: operator-protocol.md (max. 4 Positionen, 20 % Cash, Verwerfen → rejected-ideas).
 
 Antwortformat strikt:
 1) ### Briefing — YYYY-MM-DD (max. 12 Zeilen, Schema aus Project Instructions)
 2) # UPDATED_PORTFOLIO_STATE (vollständig, OPERATOR_VIEW aktualisieren)
 3) # UPDATED_WATCHLIST
-4) # NEW_LOG_ENTRY (max. 15 Zeilen)
+4) # NEW_LOG_ENTRY (max. 15 Zeilen, Ausführung: keine|Kauf bestätigt|Verkauf bestätigt)
+5) # REJECTED_IDEA (nur bei Verwerfen)
 
 Keine Einleitung, keine Links im Briefing, keine Regelwiederholung.
 ```

@@ -20,7 +20,9 @@ Mac-Repo: [`chatgpt-instructions.md`](../../../chatgpt-instructions.md) → Proj
 | 4 | `täglich/decision-log-recent.md` |
 | 5 | `täglich/watchlist.md` |
 
-**Nicht hochladen:** `operator-rules.md`, `north-star.md` (Redirects), `hcsp-lite.md`, `anleitung/`, `archiv/`, `decision-log.md` (nur Google, nicht Project)
+**Nicht hochladen:** `operator-rules.md`, `north-star.md` (Redirects), `hcsp-lite.md`, `anleitung/`, `archiv/`, `decision-log.md` (nur Git/lokal), `ideen/rejected-ideas.md` (Mission Control)
+
+**Nach Lebenszyklus-Update:** `operator-protocol.md` + `operator-core.md` einmal neu ins Project laden.
 
 ---
 

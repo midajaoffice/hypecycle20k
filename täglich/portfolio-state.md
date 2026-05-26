@@ -73,12 +73,16 @@ Spekulatives Modellportfolio von 500 EUR auf 5.000 EUR innerhalb von 12 Monaten 
 ## 3. Portfolio-Regeln
 
 - Keine echten Trades ohne menschliche Bestätigung.
+- Max. **4** gleichzeitige Positionen in §4.
+- Min. **20 %** Cash-Reserve am PV (Ausnahme nur mit Begründung im Decision Log).
 - Keine Position über 30 % des Modellportfolios.
 - Hype-Ideen maximal 5–10 %, normale Spekulationen 10–20 %.
-- Immer Cash-Reserve behalten.
 - Keine Nachkäufe aus Hoffnung.
-- Jede Position braucht These, Katalysator und Exit-Kriterium.
+- Jede Position braucht These, Katalysator und **Exit-Kriterium** (Stop/These in §4).
+- **Gewinnmitnahme:** optional prüfen ab ca. **+30 %** pnl oder wenn Position > 30 % PV — Verkauf nur nach Mission-Control-Bestätigung.
 - Keine Kaufprüfung ohne aktuelle Kursprüfung.
+- Watchlist-Radar: **5–8** Namen (Beobachten/Kaufen prüfen); Verworfenes → `ideen/rejected-ideas.md`.
+- Lebenszyklus-Details: `chatgpt/operator-protocol.md` → **Portfolio-Lebenszyklus**.
 
 ---
 

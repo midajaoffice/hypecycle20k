@@ -11,9 +11,11 @@
 
 ## Nach jedem Briefing
 
-1. `# UPDATED_PORTFOLIO_STATE` → Google `portfolio-state.md`
-2. `# NEW_LOG_ENTRY` → Google `decision-log.md` **und** `decision-log-recent.md`
-3. Project: `portfolio-state` + `decision-log-recent` **ersetzen** (löschen + neu hochladen)
+1. `# UPDATED_PORTFOLIO_STATE` → `portfolio-state.md`
+2. `# NEW_LOG_ENTRY` → `decision-log.md` **und** `decision-log-recent.md` (inkl. **Ausführung:**)
+3. `# UPDATED_WATCHLIST` → `watchlist.md` (bei Status / Verkauf / Verwerfen)
+4. `# REJECTED_IDEA` → `ideen/rejected-ideas.md` (nur bei Verwerfen)
+5. Project: `portfolio-state` + `decision-log-recent` **ersetzen** (löschen + neu hochladen)
 
 ## Operator intern
 

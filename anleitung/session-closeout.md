@@ -17,8 +17,10 @@
 ## Nach dem Chat
 
 - [ ] `# UPDATED_PORTFOLIO_STATE` → `portfolio-state.md` (ganze Datei, Kurse prüfen!)
-- [ ] `# NEW_LOG_ENTRY` → `decision-log.md` **und** `decision-log-recent.md`
-- [ ] `# UPDATED_WATCHLIST` nur bei Änderung
+- [ ] `# NEW_LOG_ENTRY` → `decision-log.md` **und** `decision-log-recent.md` (**Ausführung:** gesetzt?)
+- [ ] `# UPDATED_WATCHLIST` bei Status / Kauf / Verkauf / Verwerfen
+- [ ] `# REJECTED_IDEA` → `ideen/rejected-ideas.md` wenn verworfen
+- [ ] Verkauf: §4 Zeile weg, Cash stimmt, Watchlist aufgeräumt
 - [ ] Project: `portfolio-state` + `decision-log-recent` **ersetzen**
 
 ---
