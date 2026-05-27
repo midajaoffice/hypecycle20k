@@ -9,6 +9,32 @@ Vollständige Historie: [`decision-log.md`](decision-log.md) · Archiv: [`../arc
 
 ---
 
+## 2026-05-27 (Prompt-Vorbereitung)
+
+**North Star:** 19.121,79→38.243,58 EUR | Ist 19.121,79 EUR | Fortschritt 50,0 % | Lücke 19.121,79 EUR
+**DQ:** A | **Fazit:** Bestand übernommen, heute Prompt-Lauf auf Basisdaten 26.05 | **Kaufen prüfen:** — | **Verkauf prüfen:** Fokus Alarmpositionen
+**Ausführung:** keine
+**QA:** zielpfad_status=on_track; drawdown_stufe=normal; regelkonflikt=ja
+**Änderungen:** Keine neue Ausführung; OPERATOR-Stand für Tageslauf 27.05 vorbereitet | **Watchlist:** unverändert
+**Gebühren/Steuer:** keine neuen Gebühren | **Risiko:** mehrere High-Risk-Positionen mit hohem Drawdown
+**Nächster Schritt:** Daily Prompt 27.05 mit aktuellem OPERATOR_VIEW durchführen
+**Lernnotiz:** Historie klar trennen: 26.05 = erstes Portfolio-Update, 27.05 = operativer Prompt-Tag.
+
+---
+
+## 2026-05-26 (Erstes Realportfolio-Update)
+
+**North Star:** 19.121,79→38.243,58 EUR | Ist 19.121,79 EUR | Fortschritt 50,0 % | Lücke 19.121,79 EUR
+**DQ:** A | **Fazit:** Vollständiges reales Broker-Portfolio initial übernommen | **Kaufen prüfen:** — | **Verkauf prüfen:** BEYOND AIR, EUTELSAT
+**Ausführung:** keine
+**QA:** zielpfad_status=on_track; drawdown_stufe=normal; regelkonflikt=ja
+**Änderungen:** 20 Aktien + 2 ETFs in `portfolio-state` dokumentiert; PV 19.121,79 EUR; Invest 19.630,76 EUR | **Watchlist:** Kernpositionen priorisiert
+**Gebühren/Steuer:** keine neuen Transaktionen im Update | **Risiko:** Gesamt-P/L -508,97 EUR (-2,59 %)
+**Nächster Schritt:** Trigger-Review §6 und Tagesbriefing 27.05
+**Lernnotiz:** Erstes Datenfundament muss vor Strategie-/Action-Calls stehen.
+
+---
+
 ## 2026-05-27 (Execution-Framework aktiviert)
 
 **North Star:** 4.148,25→8.296,50 EUR | Ist 4.148,25 EUR | Fortschritt 50,0 % | Lücke 4.148,25 EUR

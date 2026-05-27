@@ -26,7 +26,7 @@ Positionswert_EUR ≈ Stück × Aktueller_Kurs × FX           (oder Broker-Wert
 PV ≈ Cash + Σ Positionswerte
 ```
 
-Bei Rohstoff-/Themen-Risiko (z. B. UEC): Uranpreis/News in §6 notieren — ermöglicht Operator-Modus `thesis_scan`.
+Bei Rohstoff-/ETF-Themen: relevante Makro- oder Sektor-News in §6 als Prüfpunkt notieren — ermöglicht Operator-Modus `thesis_scan`.
 
 ---
 
@@ -34,7 +34,7 @@ Bei Rohstoff-/Themen-Risiko (z. B. UEC): Uranpreis/News in §6 notieren — erm�
 
 ```text
 modus: maintenance|thesis_scan|action
-positionen_detail: RKLB pnl=-3% trigger_kurs=ok trigger_news=watch next=…|UEC pnl=… trigger_kurs=… trigger_news=uran next=…
+positionen_detail: IE00B53SZB19 pnl=…% trigger_kurs=ok trigger_news=watch next=…|IE00063FT9K6 pnl=…% trigger_kurs=… trigger_news=… next=…
 ```
 
 - **MC pflegt:** `pnl`, `next` (aus Broker/Calendar)
@@ -48,6 +48,6 @@ positionen_detail: RKLB pnl=-3% trigger_kurs=ok trigger_news=watch next=…|UEC 
 |---|---|
 | Kurse aktualisiert, kein Kauf/Verkauf-Trigger | `maintenance` |
 | Kurse ok, News-Scan für Positionen (§6) | `thesis_scan` |
-| K1/V1 geplant oder Freitag + Trigger | `action` |
+| K1/V1 geplant oder §6-/Regime-Trigger (nicht nur Wochentag) | `action` |
 
 Siehe auch: [`session-closeout.md`](session-closeout.md)

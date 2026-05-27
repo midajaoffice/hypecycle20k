@@ -16,7 +16,7 @@
 ## Nach jedem Briefing
 
 1. `# UPDATED_PORTFOLIO_STATE` → `portfolio-state.md`
-2. `# NEW_LOG_ENTRY` → `decision-log.md` **und** `decision-log-recent.md` (inkl. **Ausführung:**)
+2. `# NEW_LOG_ENTRY` → `decision-log.md` **und** `decision-log-recent.md` (inkl. **Ausführung:** und **QA:** `zielpfad_status`, `drawdown_stufe`, `regelkonflikt`)
 3. `# UPDATED_WATCHLIST` → `watchlist.md` (bei Status / Verkauf / Verwerfen)
 4. `# REJECTED_IDEA` → `ideen/rejected-ideas.md` (nur bei Verwerfen)
 5. Project: `portfolio-state` + `decision-log-recent` **ersetzen** (löschen + neu hochladen)
@@ -25,7 +25,7 @@
 
 - GPT liest zuerst **OPERATOR_VIEW** (oben in portfolio-state)
 - Pipeline: `operator-protocol.md` Phase 1–5
-- Briefing max. ~40 Zeilen; Rechenbudget für Zahlen
+- Briefing max. 12 Zeilen (Schema); Rechenbudget für Zahlen intern
 
 ## Nicht ins Project
 

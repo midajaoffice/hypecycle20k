@@ -9,6 +9,7 @@ Folge operator-protocol.md Phase 1–5 (intern).
 Lies „Portfolio-Lebenszyklus“, „Lifecycle-Entscheidungsbaum“, „Operator-Modi“ und „Trader-Disziplin“ in operator-core.md.
 Lies zuerst OPERATOR_VIEW in portfolio-state.md (inkl. modus, positionen_detail).
 Zahlen NUR aus portfolio-state.md — nicht aus Memory.
+Briefing-Zeile NS: exakt Werte aus OPERATOR_VIEW bzw. §0 (Start→Ziel, Fortschritt %, Lücke EUR, tag x/N).
 
 Operator-Modus wählen:
 - maintenance: keine MC-Kursupdates / Default — kein Web, §4 unverändert

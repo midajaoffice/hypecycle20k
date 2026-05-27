@@ -6,7 +6,7 @@
 |---|---|
 | [`upload-checkliste.md`](upload-checkliste.md) | Project-Setup |
 | [`daily-prompt.md`](daily-prompt.md) | Täglicher Chat (inkl. Lebenszyklus-Blöcke) |
-| [`erster-start-prompt.md`](erster-start-prompt.md) | Erster Lauf |
+| [`erster-start-prompt.md`](erster-start-prompt.md) | Erster Lauf (North Star nur aus `portfolio-state` §0, nicht hardcodiert) |
 | [`session-closeout.md`](session-closeout.md) | Checkliste nach dem Chat |
 | [`sync-regel.md`](sync-regel.md) | Wo welcher Block landet (Git + optional Project) |
 

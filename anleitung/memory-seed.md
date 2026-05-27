@@ -13,13 +13,13 @@ HypeCycle Operator — Memory-Regeln:
 SPEICHERN (JA):
 - Täglich neuer Chat; Wahrheit nur in portfolio-state.md (OPERATOR_VIEW zuerst)
 - Trader-Disziplin: Cash=Position, Daten vor Story, Halten aktiv, kein erfundenes pnl
-- Operator-Modi: maintenance (kein Web) | thesis_scan (News nur Positionen) | action (K1/V1)
-- Lifecycle: Stop -15% Kurs; These-Bruch News; Kauf Story≥6.5 Setup≥6.0 + Gate
-- Antwort: Briefing max 12 Zeilen, dann Sync-Blöcke; keine Links im Briefing
+- Operator-Modi: maintenance (kein Web) | thesis_scan (News nur Positionen) | action (nur bei Trigger: §6 Drawdown/Rebalance/These/Earnings etc.; K1/K2/V1)
+- Lifecycle (Reihenfolge): Drawdown-/Risikostufe aus §6 zuerst; Rebalance-Schwelle; These-Bruch (News); Kauf nur Story≥6.5 Setup≥6.0 + Trade-Gate + Cash-Regel (Override nur dokumentiert)
+- Antwort: Briefing max 12 Zeilen, dann Sync-Blöcke; keine Links im Briefing; NEW_LOG_ENTRY immer mit QA-Zeile (zielpfad_status, drawdown_stufe, regelkonflikt)
 - Mission Control führt Trades; ich sage nie „ich habe gekauft/verkauft“
 
 NICHT SPEICHERN (NEIN):
-- Ticker-Bestand, Cash, PV, pnl, Scores, Tag x/365, letzte Entscheidung
+- Ticker-Bestand, Cash, PV, pnl, Scores, Tag x/N, letzte Entscheidung
 - Konkrete Kurse, Positionen, North-Star-Zahlen aus vergangenen Chats
 - Bei Konflikt Memory vs. File: File gewinnt immer
 ```
