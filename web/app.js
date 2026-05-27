@@ -48,7 +48,15 @@ function parseKvLine(line) {
 
 function section(text, heading) {
   const re = new RegExp(
-    `## ${heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[\\s\\S]*?\\n([\\s\\S]*?)(?=\\n## |\\Z)`,
+    `## ${heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[\\s\\S]*?\\n([\\s\\S]*?)(?=\\n## |$)`,
+  );
+  const m = text.match(re);
+  return m ? m[1] : "";
+}
+
+function subsection(text, heading) {
+  const re = new RegExp(
+    `### ${heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*\\n([\\s\\S]*?)(?=\\n### |\\n## |$)`,
   );
   const m = text.match(re);
   return m ? m[1] : "";
@@ -115,12 +123,15 @@ function assetCell(name, ticker) {
 
 function parseNorthStar(ov) {
   const ns = parseKvLine(ov.north_star || "");
-  const goal = (ov.north_star || "").match(/(\d+)→(\d+)/);
+  const goal = (ov.north_star || "").match(/([\d.,]+)→([\d.,]+)/);
+  const start = goal ? parseMoneyCell(goal[1]) : NaN;
+  const target = goal ? parseMoneyCell(goal[2]) : NaN;
+  const luecke = parseMoneyCell(ns.luecke || "");
   return {
-    start: goal ? goal[1] : "?",
-    target: goal ? goal[2] : "?",
+    start: Number.isNaN(start) ? "?" : start,
+    target: Number.isNaN(target) ? "?" : target,
     progress: (ns.fortschritt || "0").replace(",", "."),
-    luecke: ns.luecke || "—",
+    luecke: Number.isNaN(luecke) ? ns.luecke || "—" : luecke,
     tag: ns.tag || "—",
     zielDatum: ns.ziel_datum || "—",
   };
@@ -541,7 +552,10 @@ async function load() {
     renderWatchlist(
       parseMarkdownTable(section(portfolioText, "5. Watchlist-Zusammenfassung")),
     );
-    renderChecks(section(portfolioText, "6. Offene Prüfpunkte"));
+    renderChecks(
+      subsection(portfolioText, "6.5 Offene Prüfpunkte") ||
+        section(portfolioText, "6. Offene Prüfpunkte"),
+    );
     renderLog(parseDecisionLog(logText));
   } catch (err) {
     showError(
