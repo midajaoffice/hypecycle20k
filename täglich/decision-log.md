@@ -37,6 +37,19 @@ Nach jedem Briefing `# NEW_LOG_ENTRY` einfügen in:
 
 ---
 
+## 2026-05-27 (Maintenance-Hold, kein neuer Export)
+
+**North Star:** 19121.79→38243.58 EUR | Ist 19121.79 EUR | Fortschritt 50.0% | Lücke 19121.79 EUR
+**DQ:** A | **Fazit:** Halten im maintenance-Modus; keine Kurs-/P&L-Änderung | **Kaufen prüfen:** — | **Verkauf prüfen:** —
+**Ausführung:** keine
+**QA:** zielpfad_status=on_track; drawdown_stufe=normal; regelkonflikt=ja
+**Änderungen:** keine; §4 unverändert | **Watchlist:** unverändert
+**Gebühren/Steuer:** keine neuen Gebühren; Steuer nur Modell | **Risiko:** Cash=0 unter 20%-Reserve; Alarmpositionen nur nach MC-Update prüfen
+**Nächster Schritt:** Cashbestand bestätigen; neuen Broker-Export liefern; FR0010221234/US08862L2025 mit Kurs+News prüfen
+**Lernnotiz:** Ohne neuen Broker-Export bleibt Halten aktiv; Cashmangel verhindert neue Risikoaufnahme.
+
+---
+
 ## 2026-05-27 (Prompt-Vorbereitung)
 
 **North Star:** 19.121,79→38.243,58 EUR | Ist 19.121,79 EUR | Fortschritt 50,0 % | Lücke 19.121,79 EUR

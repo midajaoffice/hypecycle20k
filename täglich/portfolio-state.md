@@ -19,7 +19,7 @@ modus: maintenance
 positionen: CA00288U1066,DE0005158703,US08862L2025,AU000000BHP4,CA13321L1085,US1912161007,US26740W1099,FR0010221234,US5510733075,CH0038863350,BMG657731060,US6701002056,US6748705067,US7731211089,GB00B63H8491,DE0007236101,US86738R1086,FR001400H2X4,FR0000124141,FR0000125486,IE00063FT9K6,IE00B53SZB19
 positionen_detail: CA00288U1066 pnl=9.75% trigger_kurs=ok trigger_news=watch next=earnings|CA13321L1085 pnl=-8.60% trigger_kurs=watch trigger_news=uran next=uran_update|FR0010221234 pnl=-55.70% trigger_kurs=alarm trigger_news=watch next=turnaround_check|US08862L2025 pnl=-93.58% trigger_kurs=alarm trigger_news=watch next=liquidity_check|IE00B53SZB19 pnl=28.71% trigger_kurs=ok trigger_news=macro next=fed_cpi|IE00063FT9K6 pnl=0.08% trigger_kurs=ok trigger_news=copper next=china_pmi
 watchlist_top: IE00B53SZB19,CA13321L1085,DE0007236101
-letzte_entscheidung: update|reales_portfolio_vollstaendig_uebernommen|2026-05-27
+letzte_entscheidung: halten|modus_maintenance_trigger_keiner|2026-05-27
 gebuehren_modell: broker_real_export|steuer_modell:26.375pct_DE
 ```
 
